@@ -79,31 +79,12 @@ String String::operator+(const String& other) {
     return result;
 }
 
-// String String::operator+(const String &other)
-// {
-//     String resultStr;
-//     resultStr.length = this->length + other.length;
-//     capacity = (resultStr.length+1)*2;
-//     resultStr.data = std::make_unique<char[]>(capacity);
-//     size_t i = 0;
-//     for (; i < this->length; ++i)
-//     {
-//         resultStr.data[i] = this->data[i];
-//     }
-//     for (size_t j = 0; j <= other.length; ++j, ++i)
-//     {
-//         resultStr.data[i] = other.data[j];
-//     }
-//     return resultStr;
-// }
-
 void *String::memcpy(void *one, const void *two, size_t num)
 {
     for (size_t i = 0; i < num; ++i)
     {
         ((unsigned char *)one)[i] = ((unsigned char *)two)[i];
     }
-    //((unsigned char *)one)[num] = '\0';
     return one;
 }
 
@@ -341,4 +322,5 @@ void String::print() {
     for (size_t i = 0; i<length; ++i) {
         std:: cout << data[i];
     }
+    std::cout << '\n';
 }
